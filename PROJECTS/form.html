@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample HTML Form</title>
+    <script language="javascript">
+        function chkBro() {
+            if(document.f1.sib_bro.checked==true){
+                document.getElementById('bro_cnt').disabled=false;
+                document.getElementById('bro_cnt').value="";
+            }else{
+                document.getElementById('bro_cnt').disabled=true;
+                document.getElementById('bro_cnt').value="-NA-";
+            }
+        }
+        function chkSis(){
+            if(document.f1.sib_sis.checked==true){
+                document.getElementById('sis_cnt').disabled=false;
+                document.getElementById('sis_cnt').value="";
+            }else{
+                document.getElementById('sis_cnt').disabled=true;
+                document.getElementById('sis_cnt').value="-NA-";
+            }
+        }
+        function showData(){
+            if(document.getElementById('candi_n').value==""){
+                alert("candidate name cannot be blank");
+            }else{
+            document.getElementById('cn').innerHTML=document.f1.candi_n.value;
+            document.getElementById('bd').innerHTML=document.f1.dob.value;
+            document.getElementById('sx').innerHTML=document.f1.gender.value;
+            document.getElementById('fn').innerHTML=document.f1.fath_n.value;
+            document.getElementById('mn').innerHTML=document.f1.moth_n.value;
+            document.getElementById('bn').innerHTML=document.f1.bro_cnt.value;
+            document.getElementById('sn').innerHTML=document.f1.sis_cnt.value;
+            document.getElementById('mob').innerHTML=document.f1.mob_no.value;
+            document.getElementById('eml').innerHTML=document.f1.email_id.value;
+            document.getElementById('mq').innerHTML=document.f1.quali.value;
+            var fab_foods = new Array();
+        
+            for(var i = 0; i < 4; i++) {
+                if(document.f1.chk[i].checked==true) {
+                    fab_foods.push(document.f1.chk[i].value);
+                }
+            }
+            document.getElementById('ff').innerHTML=fab_foods.join(", ");
+            }     
+        }
+    </script>
+</head>
+<body>
+    <form name="f1" id="f1">
+        <table width="50%" align="center" border="" cellpadding="2" cellspacing="0">
+            <tr>
+                <td width="20%">Candidate's Name</td>
+                <td colspan="5"><input type="text" name="candi_n" id="candi_n" value="" style="width:98%"></td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td colspan="2"><input type="text" name="dob" id="dob" value="" style="width:98%"></td>
+                <td width="12%" style="text-align: right">Gender</td>
+                <td colspan="2">
+                    <select name="gender" id="gender" style="width: 98%">
+                        <option value="">----</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Father's Name</td>
+                <td colspan="5"><input type="text" name="fath_n" id="fath_n" value="" style="width:98%"></td>
+            </tr>
+            <tr>
+                <td>Mother's Name</td>
+                <td colspan="5"><input type="text" name="moth_n" id="moth_n" value="" style="width:98%"></td>
+            </tr>
+            <tr>
+                <td rowspan="2" style="vertical-align: top">Siblings</td>
+                <td><input type="checkbox" name="sib_bro" id="sib_bro" onclick="chkBro();">Brothers</td>
+                <td colspan="4"><input type="text" name="bro_cnt" id="bro_cnt" style="width:98%" value="" disabled></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="sib_sis" id="sib_sis" onclick="chkSis();">Sisters</td>
+                <td colspan="4"><input type="text" name="sis_cnt" id="sis_cnt" style="width:98%" value="" disabled></td>
+            </tr>
+            <tr>
+                <td>Mobile No.</td>
+                <td width="20%"><input type="text" name="mob_no" id="mob_no" style="width:95%"></td>
+                <td width="12%" style="text-align: right">Email ID</td>
+                <td colspan="3"><input type="text" name="email_id" id="email_id" style="width:98%"></td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top">Max Qualification</td>
+                <td colspan="2">
+                    <input type="radio" name="quali" id="matric" value="matric">Matriculation<br>
+                    <input type="radio" name="quali" id="intermediate" value="intermediate">Intermediate<br>
+                    <input type="radio" name="quali" id="graduate" value="graduate">Graduate<br>
+                    <input type="radio" name="quali" id="post_graduate" value="post_graduate">Post Graduate
+                </td>
+                <td style="vertical-align: top">Fav. Food</td>
+                <td colspan="2">
+                    <input type="checkbox" name="chk" id="chinese" value="Chinese">Chinese<br>
+                    <input type="checkbox" name="chk" id="moghlai" value="Moghlai">Moghlai<br>
+                    <input type="checkbox" name="chk" id="continental" value="Continental">Continental<br>
+                    <input type="checkbox" name="chk" id="traditional" value="Traditional">Traditional
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="5" style="border: 0px solid #000;padding-top:10px">
+                    <input type="button" name="btn1" id="btn1" value="Submit" onclick="showData();">&nbsp;&nbsp;
+                    <input type="reset" name="btn2" id="btn2" value="clear">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" height="80">&nbsp;</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #999">Name<br>Birthday<br>Gender<br>Father<br>Mother<br>
+                    Brother(s)<br>Sister(s)<br>Mobile No.<br>E-mail ID<br>MAx.Qualification<br>Fav. Food(s)</td>
+                <td colspan="6" height="150" style="border: 1px solid #999">
+                    <label name="cn" id="cn"></label><br>
+                    <label name="bd" id="bd"></label><br>
+                    <label name="sx" id="sx"></label><br>
+                    <label name="fn" id="fn"></label><br>
+                    <label name="mn" id="mn"></label><br>
+                    <label name="bn" id="bn"></label><br>
+                    <label name="sn" id="sn"></label><br>
+                    <label name="mob" id="mob"></label><br>
+                    <label name="eml" id="eml"></label><br>
+                    <label name="mq" id="mq"></label><br>
+                    <label name="ff" id="ff"></label><br>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
