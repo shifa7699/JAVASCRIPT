@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<Style>
+    p{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: rgb(137, 20, 20);
+        text-align: center;
+    }
+</Style>
+<body>
+    <button onclick="result();">
+        Your Details
+    </button>
+    <p id="detail"></p>
+    <script>
+        function result(){
+            var name = prompt("Enter your name");
+            var age = prompt("Enter your age");
+            var city = prompt("Enter your city");
+            alert(`Hello ${name}. Your age is ${age}. Your city is ${city}.`);
+            // alert.getElementById("detail").innerHTML=`<h1> Hello ${name}. Your age is ${age}. Your city is ${city}.</h1>`;
+            
+        }   
+
+    </script>
+</body>
+</html>

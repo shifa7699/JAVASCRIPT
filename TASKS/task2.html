@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="my_name();">Your Name</button>
+    <button onclick="f_name();">Your Friend's Name</button>
+    <button onclick="result();">Result</button>
+    <p id="para">See your result here</p>
+    <script>
+        function my_name(){
+            name = prompt("Enter your name");
+        }
+        function f_name(){
+            frnd_name = prompt("Enter your friend's name");
+        }
+        function result(){
+            document.getElementById("para").innerHTML=`<h1> ${name} will go movie with ${frnd_name}`;   
+        }
+    </script>
+</body>
+</html>

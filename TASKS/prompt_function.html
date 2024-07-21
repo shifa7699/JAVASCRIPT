@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p{
+        font-size: 30px;
+        color: rgb(230, 39, 25);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    h1{
+        display: inline;
+    }
+    h2{
+        display: inline;
+    }
+</style>
+<body>
+    <center>
+    <!-- <button onclick="seealer();">
+        See Alert
+    </button> -->
+    <button onclick="seeprom();">Your Name</button>
+    <p id="para">Your text will be diplayed here</p>
+</center>
+    <script>
+        // function seealer(){
+        //     alert("This is alert");
+        // }
+        function seeprom(){
+            var name=prompt("Write Your Name");
+            document.getElementById("para").innerHTML=`<h1> Hello, </h1> <h2> ${name} </h1>`
+        }
+    </script>
+</body>
+</html>
